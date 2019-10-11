@@ -1,3 +1,28 @@
+type getUsername = (x:string,y:string)=>void; // string
+let getUsernameFunction:getUsername = function(firstname:string,lastname:string){
+    // return "12";
+    return firstname+' '+lastname;
+}
+let rs = getUsernameFunction('loading',"ma");
+console.log(rs);
+
+// 字面量类型
+type zType = 1|"one"|"first";
+let z1:zType = "first"
+//let z2:zType = "two"
+console.log('---------------------');
+let isOk:boolean = true;
+let isOk2:Boolean = Boolean(0)
+let isOk3:Boolean = new Boolean(1)
+let str:String = new String('loading')
+let str2:string = "name"
+let na:number|string;
+na = 10;
+console.log((<number>na).toFixed(2));
+console.log('---------------------');
+let cc:(number|string)[] = [];
+cc.push(undefined)
+console.log(cc)
 
 enum Gender{
     BOY, // BOY="bb"

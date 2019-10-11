@@ -1,3 +1,24 @@
+var getUsernameFunction = function (firstname, lastname) {
+    // return "12";
+    return firstname + ' ' + lastname;
+};
+var rs = getUsernameFunction('loading', "ma");
+console.log(rs);
+var z1 = "first";
+//let z2:zType = "two"
+console.log('---------------------');
+var isOk = true;
+var isOk2 = Boolean(0);
+var isOk3 = new Boolean(1);
+var str = new String('loading');
+var str2 = "name";
+var na;
+na = 10;
+console.log(na.toFixed(2));
+console.log('---------------------');
+var cc = [];
+cc.push(undefined);
+console.log(cc);
 var Gender;
 (function (Gender) {
     Gender[Gender["BOY"] = 0] = "BOY";
