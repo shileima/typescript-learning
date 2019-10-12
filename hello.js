@@ -1,3 +1,60 @@
+/* 存取器 */
+var User = /** @class */ (function () {
+    function User() {
+    }
+    Object.defineProperty(User.prototype, "name", {
+        get: function () {
+            console.log('get');
+            return this.myname;
+        },
+        set: function (newName) {
+            console.log('set name');
+            this.myname = newName;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return User;
+}());
+var u = new User();
+u.myname = "seanma";
+console.log(u);
+console.log('---------------------');
+/* 类 */
+var Person = /** @class */ (function () {
+    function Person() {
+    }
+    Person.prototype.getName = function () {
+        console.log(this.name);
+    };
+    return Person;
+}());
+var p = new Person();
+p.name = "loading123";
+p.getName();
+/* 函数重载: 在ts里表现为为一个函数提供多种函数类型的定义 */
+var obj = {};
+function attr(val) {
+    if (typeof val === 'string') {
+        obj.name = val;
+    }
+    else {
+        obj.age = val;
+    }
+}
+attr('loading');
+// attr(true)
+attr(10);
+console.log(obj);
+function sum() {
+    var number = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        number[_i] = arguments[_i];
+    }
+    console.log(Array.isArray(number));
+    return number.reduce(function (current, item) { return current + item; }, 0);
+}
+console.log(sum(1, 2, 3, 4));
 var getUsernameFunction = function (firstname, lastname) {
     // return "12";
     return firstname + ' ' + lastname;
@@ -6,7 +63,6 @@ var rs = getUsernameFunction('loading', "ma");
 console.log(rs);
 var z1 = "first";
 //let z2:zType = "two"
-console.log('---------------------');
 var isOk = true;
 var isOk2 = Boolean(0);
 var isOk3 = new Boolean(1);
