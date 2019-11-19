@@ -53,9 +53,9 @@ p.getName()
 let obj: any = {};
 function attr(val: number): void;
 function attr(val: string): void;
-function attr(val: any) {
+function attr(val: number | string): void {
     if (typeof val === 'string') {
-        obj.name = val;
+        obj.name = val
     } else {
         obj.age = val;
     }
@@ -92,8 +92,8 @@ cc.push(undefined)
 console.log(cc)
 
 enum Gender {
-    BOY, // BOY="bb"
-    GIRL // GIRL="gg"
+    BOY, // BOY = "男",
+    GIRL // GIRL = "女"
 }
 console.log(Gender[0]);
 console.log(Gender.BOY);
@@ -105,6 +105,7 @@ aa = false;
 console.log(aa)
 
 /* any > (string|number) > undefined|null > never */
+/* never 是死循环或报错函数的返回值; */
 function bb(): void {
     console.log(123)
     return undefined;
