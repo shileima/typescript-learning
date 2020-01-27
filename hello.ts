@@ -1,3 +1,4 @@
+//const pi:string;
 /* 存取器 */
 class User {
     myname: string;
@@ -37,7 +38,7 @@ function attr(val: any) {
     }
 }
 attr('loading')
-// attr(true)
+//attr(true)
 attr(10)
 console.log(obj);
 

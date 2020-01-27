@@ -1,25 +1,4 @@
-/* 存取器 */
-var User = /** @class */ (function () {
-    function User() {
-    }
-    Object.defineProperty(User.prototype, "name", {
-        get: function () {
-            console.log('get');
-            return this.myname;
-        },
-        set: function (newName) {
-            console.log('set name');
-            this.myname = newName;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return User;
-}());
-var u = new User();
-u.myname = "seanma";
-console.log(u);
-console.log('---------------------');
+//const pi:string;
 /* 类 */
 var Person = /** @class */ (function () {
     function Person() {
@@ -43,7 +22,7 @@ function attr(val) {
     }
 }
 attr('loading');
-// attr(true)
+//attr(true)
 attr(10);
 console.log(obj);
 function sum() {
