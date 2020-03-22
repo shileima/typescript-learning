@@ -1,13 +1,13 @@
 let num: number = 123
 let str3: string = `this is a string ${num}`
-console.log(str3)
+// console.log(str3)
 
 enum Roles {
   SUPER_ADMIN = 1,
   ADMIN,
   USER
 }
-console.log(Roles.ADMIN)
+// console.log(Roles.ADMIN)
 
 let v: void
 v = null
@@ -34,6 +34,6 @@ const getLenth = (target: string | number) => {
     return target.toString().length
   }
 }
-console.log(getLenth('123'))
-console.log(getLenth(22))
+// console.log(getLenth('123'))
+// console.log(getLenth(22))
 
