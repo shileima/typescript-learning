@@ -1,7 +1,7 @@
-//const pi:string;
+// const pi:string;
 /* 存取器 */
 class User {
-    myname: string;
+    public myname: string;
     get name() {
         console.log('get')
         return this.myname;
@@ -17,8 +17,8 @@ console.log(u);
 console.log('---------------------');
 /* 类 */
 class Person {
-    name: string;
-    getName(): void {
+    public name: string;
+    public getName(): void {
         console.log(this.name)
     }
 }
@@ -38,7 +38,7 @@ function attr(val: any) {
     }
 }
 attr('loading')
-//attr(true)
+// attr(true)
 attr(10)
 console.log(obj);
 
@@ -59,7 +59,7 @@ console.log(rs);
 // 字面量类型
 type zType = 1 | "one" | "first";
 let z1: zType = "first"
-//let z2:zType = "two"
+// let z2:zType = "two"
 
 let isOk: boolean = true;
 let isOk2: Boolean = Boolean(0)
@@ -68,7 +68,7 @@ let str: String = new String('loading')
 let str2: string = "name"
 let na: number | string;
 na = 10;
-console.log((<number>na).toFixed(2));
+console.log((na as number).toFixed(2));
 console.log('---------------------');
 let cc: (number | string)[] = [];
 cc.push(undefined)
