@@ -12,7 +12,7 @@
 // const point = new Point(1, 2)
 // console.log(point)
 
-class Parent {
+class Parent4 {
   public age: number
   public m: string
   public x: number
@@ -26,13 +26,13 @@ class Parent {
     return this.age
   }
 }
-Parent.prototype.x = 2
+Parent4.prototype.x = 2
 // const p1 = new Parent(18)
 // console.log(p1.age)
 // console.log(p1.staticName)
-console.log(Parent.staticName)
+console.log(Parent4.staticName)
 
-class Child extends Parent {
+class Child2 extends Parent4 {
   constructor(age: number) {
     super(age)
     // 通过 "super" 关键字只能访问基类的公共方法和受保护方法
@@ -44,4 +44,4 @@ class Child extends Parent {
   //   return super.x
   // }
 }
-const c = new Child(19)
+const c4 = new Child2(19)

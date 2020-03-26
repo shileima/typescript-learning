@@ -12,7 +12,7 @@ interface Circle {
     kind: 'Circle',
     radius: number
 }
-function assertnever(value: never): never {
+function asserter(value: never): never {
     throw new Error('Unexpected object ' + value)
 }
 type Shape = Square | Rectangle | Circle
@@ -21,11 +21,11 @@ function getArea(s: Shape): number {
         case 'square':
             return s.size * s.size
             break;
-        /* case 'rectangle':
+        case 'rectangle':
             return s.height * s.width
-            break; */
+            break;
         case 'Circle':
             return Math.PI * s.radius ** 2
-        default: return assertnever(s)
+        default: return asserter(s) // 这里只能返回 never，如果返回 case 可能性则报错
     }
 }

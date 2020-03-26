@@ -2,7 +2,7 @@ const getFullName = ({ firstName, lastName }: NameInfo): string => {
   return `${firstName} ${lastName}`
 }
 const rs2 = getFullName({
-  firstName: 'haha',
+  firstName: 'jack',
   lastName: "19"
 })
 interface NameInfo {
@@ -29,11 +29,11 @@ type AddFunc = (num1: number, num2: number) => number
 
 const add: AddFunc = (a, b) => a + b
 // 函数属性约束
-interface Counter {
+interface CounterI {
   (): void,
   count: number
 }
-const getCounter = (): Counter => {
+const getCounter = (): CounterI => {
   const c = () => { c.count++ }
   c.count = 1
   // throw new Error('error')

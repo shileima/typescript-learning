@@ -1,35 +1,35 @@
 let str1 = "Loading"
 console.log(str1.toLowerCase())
 console.log('---------------------');
-//参数属性
+// 参数属性
 class User3 {
-    myname: string
-    readonly nameReadonly: string
+    public myName: string
+    public readonly nameReadonly: string
     // 参数添加public后，参数变成了类的属性
     constructor(public readonly value: string) {
-        this.myname = value
+        this.myName = value
     }
     get name() {
-        return this.myname
+        return this.myName
     }
     set name(val: string) {
-        this.myname = val
+        this.myName = val
     }
 }
-let u3 = new User3('seanma')
+let u3 = new User3('seam')
 u3.name = "loading"
-// u3.nameReadonly = "readyonly"
+// u3.nameReadonly = "readonly"
 console.log(u3)
 console.log(u3.nameReadonly)
-console.log(u3.myname)
+console.log(u3.myName)
 console.log(u3.value)
 console.log(u3.name)
 console.log('---------------------');
 
 // 类的属性（无需创建实例）
 class Father {
-    static className = "Daddy"
-    static getClassName() {
+    public static className = "Daddy"
+    public static getClassName() {
         console.log(Father.className)
         return Father.className
     }

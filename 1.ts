@@ -1,7 +1,7 @@
 /* readyonly */
 class Anima {
     constructor(public readonly name: string) { }
-    getName() {
+    public getName() {
         console.log(this.name);
     }
 }
@@ -20,7 +20,7 @@ console.log('---------------------');
 
 /* 存取器 */
 class User {
-    //myname: string;
+    // myname: string;
     // public 设置参数为具有全局属性
     constructor(public myname: string) {
         // this.myname = myname;
@@ -34,14 +34,14 @@ class User {
         this.myname = newName;
     }
 }
-//let u = new User(123);
+// let u = new User(123);
 let u = new User('loading');
-u.myname = "seanma";
+u.myname = "script";
 console.log(u);
 /* 类 */
 class Person {
-    name: string;
-    getName(): void {
+    public name: string;
+    public getName(): void {
         console.log(this.name)
     }
 }
@@ -52,6 +52,7 @@ p.getName()
 /* 函数重载: 在ts里表现为为一个函数提供多种函数类型的定义 */
 let obj: any = {};
 function attr(val: number): void;
+// tslint:disable-next-line:unified-signatures
 function attr(val: string): void;
 function attr(val: number | string): void {
     if (typeof val === 'string') {
@@ -66,7 +67,7 @@ attr(10)
 console.log(obj);
 
 type getUsername = (x: string, y: string) => void; // string
-let getUsernameFunction: getUsername = function (firstname: string, lastname: string) {
+let getUsernameFunction: getUsername = (firstname: string, lastname: string) => {
     // return "12";
     return firstname + ' ' + lastname;
 }
@@ -76,16 +77,18 @@ console.log(rs);
 // 字面量类型
 type zType = 1 | "one" | "first";
 let z1: zType = "first"
-//let z2:zType = "two"
+// let z2:zType = "two"
 
 let isOk: boolean = true;
 let isOk2: Boolean = Boolean(0)
+// tslint:disable-next-line:no-construct
 let isOk3: Boolean = new Boolean(1)
+// tslint:disable-next-line:no-construct
 let str: String = new String('loading')
 let str2: string = "name"
 let na: number | string;
 na = 10;
-console.log((<number>na).toFixed(2));
+console.log((na as number).toFixed(2));
 console.log('---------------------');
 let cc: (number | string)[] = [];
 cc.push(undefined)
@@ -119,7 +122,7 @@ console.log(arr2);
 function print(name: string, age?: number): void {
     console.log(name, age);
 }
-print('zfpx');
+print('zips');
 
 // 默认参数
 function ajax(url: string, method: string = 'GET') {
@@ -128,20 +131,20 @@ function ajax(url: string, method: string = 'GET') {
 ajax('/users');
 
 // 剩余参数
-function sum(...number: number[]) {
-    console.log(Array.isArray(number))
-    return number.reduce((current, item) => current + item, 0)
+function sum(...value: number[]) {
+    console.log(Array.isArray(value))
+    return value.reduce((current, item) => current + item, 0)
 }
 console.log(sum(12, 12));
 
 // 属性存取器
 class User2 {
-    //类里面可以访问， 子类和其它任何地方都不可以访问
+    // 类里面可以访问， 子类和其它任何地方都不可以访问
     private mynamePrivate: string;
-    //类里面 子类 其它任何地方外边都可以访问
+    // 类里面 子类 其它任何地方外边都可以访问
     protected mynameProtected: string;
     public mynamePublic: string;
-    //类里面 子类 都可以访问,其它任何地方不能访问
+    // 类里面 子类 都可以访问,其它任何地方不能访问
     constructor(public myname: string) {
         this.mynamePublic = myname;
         this.mynamePrivate = myname;
@@ -156,7 +159,7 @@ class User2 {
     }
 }
 
-let user = new User2('zhufeng');
+let user = new User2('shuting');
 class UserCopy extends User2 {
     constructor(public myname: string) {
         super(myname)
@@ -165,13 +168,13 @@ class UserCopy extends User2 {
         // this.mynamePrivate = myname;
     }
 }
-let usercopy = new UserCopy('userCopy')
-user.h = 'jiagou';
+let recopy = new UserCopy('userCopy')
+user.h = 'loading';
 console.log(user.h);
 console.log(user.mynamePublic)
 // console.log(user.mynameProtected)
 // console.log(user.mynamePrivate)
 
-console.log(usercopy.h)
-console.log(usercopy.mynamePublic)
-// console.log(usercopy.mynameProtected)
+console.log(recopy.h)
+console.log(recopy.mynamePublic)
+// console.log(recopy.mynameProtected)
